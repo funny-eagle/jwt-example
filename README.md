@@ -1,7 +1,8 @@
 # JWT Example
 
-这是一个关于如何使用`JWT`的入门项目，JWT简介可以参考[JWT介绍](http://www.funnyeagle.cn/Introduction-to-jwt/) 。 项目基于`jdk8`, ` `spring-boot`, `
-spring-security`, `jjwt` 搭建。
+这是一个使用`JWT`的入门项目， 基于`spring-boot`, `spring-security`, `jjwt` 搭建。
+
+JWT简介可以参考[JWT介绍](http://www.funnyeagle.cn/Introduction-to-jwt/) 。
 
 ## 一、项目结构
 
