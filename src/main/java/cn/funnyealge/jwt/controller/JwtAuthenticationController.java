@@ -36,20 +36,20 @@ public class JwtAuthenticationController {
     private JtwUserDetailService userDetailService;
 
     @PostMapping(value = "/authenticate")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception{
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
         UserDetails userDetails = userDetailService.loadUserByUsername(authenticationRequest.getUsername());
         String token = jwtUtil.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
-    private void authenticate(String username, String password) throws Exception{
-        try{
+    private void authenticate(String username, String password) throws Exception {
+        try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
-        }catch (DisabledException e){
+        } catch (DisabledException e) {
             throw new Exception("user disabled", e);
-        }catch (BadCredentialsException e){
-            throw new Exception("invalid credentials",e);
+        } catch (BadCredentialsException e) {
+            throw new Exception("invalid credentials", e);
         }
     }
 }

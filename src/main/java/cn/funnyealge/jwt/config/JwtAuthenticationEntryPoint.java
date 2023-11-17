@@ -11,6 +11,7 @@ import java.io.Serializable;
 
 /**
  * 此类继承 Spring 的 AuthenticationEntryPoint 类，拒绝未经身份验证的请求并返回错误代码 401
+ *
  * @author yangjl
  * @description
  * @date 2023-11-15 14:02

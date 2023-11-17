@@ -16,8 +16,8 @@ import java.util.ArrayList;
 @Service
 public class JtwUserDetailService implements UserDetailsService {
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        if("funnyeagle".equals(username)){
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        if ("funnyeagle".equals(username)) {
             // username:funnyeagle password:funnyeagle bcrypt
             return new User("funnyeagle", "$2a$10$JQEWsaUWgp6zYk1cvLvHMuM6kcLbmAdWPrp9QCSNYswu.kFum9PIq", new ArrayList<>());
         }
